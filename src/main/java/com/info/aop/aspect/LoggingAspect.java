@@ -1,4 +1,4 @@
-package com.info.aop.logging;
+package com.info.aop.aspect;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.aspectj.lang.ProceedingJoinPoint;
