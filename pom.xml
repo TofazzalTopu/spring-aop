@@ -11,7 +11,7 @@
 	<groupId>com.aop</groupId>
 	<artifactId>springaop</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 	<name>springaop</name>
 	<description>Spring AOP project</description>
 	<url/>
