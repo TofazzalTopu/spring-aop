@@ -31,10 +31,12 @@ public class LoggingAspect {
     public Object logRequestResponse(ProceedingJoinPoint joinPoint) throws Throwable {
         String methodName = joinPoint.getSignature().toShortString();
         Object[] args = joinPoint.getArgs();
-        logger.info("📥 Request to: " + methodName + " with args: " + objectMapper.writeValueAsString(args));
+        String requestStr = args != null ? objectMapper.writeValueAsString(args) : "null";
+        logger.info("📥 Request to: {} with args: {}", methodName,  requestStr);
 
         Object result = joinPoint.proceed();
-        logger.info("📤 Response from: " + methodName + " => " + objectMapper.writeValueAsString(result));
+        String responseStr = result != null ? objectMapper.writeValueAsString(result) : "null";
+        logger.info("📤 Response from: {},  => {}", methodName, responseStr);
         return result;
     }
 

@@ -1,6 +1,7 @@
 package com.info.aop.controller;
 
 
+import com.google.gson.Gson;
 import com.info.aop.User;
 import com.info.aop.exception.CustomException;
 import com.info.aop.service.PaymentService;
@@ -37,4 +38,11 @@ public class UserController {
         return  paymentService.processPayment(amount);
     }
 
+
+    @PostMapping("/user")
+    public User convrtUser(@RequestBody String user){
+        Gson gson = new Gson();
+        User usr = gson.fromJson(user, User.class);
+        return usr;
+    }
 }
