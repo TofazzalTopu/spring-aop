@@ -25,7 +25,7 @@ public class UserController {
 
     @GetMapping("/{id}")
     public User get(@PathVariable Long id) {
-        return new User(id, "John Doe");
+        return userService.findById(id);
     }
 
     @GetMapping("/exception")
@@ -45,4 +45,5 @@ public class UserController {
         User usr = gson.fromJson(user, User.class);
         return usr;
     }
+
 }

@@ -1,7 +1,7 @@
 package com.info.aop.controller;
 
 
-import com.info.aop.config.ValidateCredentials;
+import com.info.aop.annotation.ValidateCredentials;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;

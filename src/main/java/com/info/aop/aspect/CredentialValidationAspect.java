@@ -20,7 +20,7 @@ public class CredentialValidationAspect {
         this.request = request;
     }
 
-    @Pointcut("@annotation(com.info.aop.config.ValidateCredentials)")
+    @Pointcut("@annotation(com.info.aop.annotation.ValidateCredentials)")
     public void validateCredentialsPointcut() {}
 
     @Before("validateCredentialsPointcut()")

@@ -34,7 +34,7 @@ public class SecureLoginAspect {
     private static final String PASSWORD = "123";
 
     @Pointcut("execution(* com.info.aop.controller.*.*(..))")
-//    @Pointcut("@annotation(com.info.aop.config.ValidateLoginCredentials)")
+//    @Pointcut("@annotation(com.info.aop.annotation.ValidateLoginCredentials)")
     public void validateLoginCredentialsPointcut() {
     }
 
