@@ -42,7 +42,7 @@ public class SecureLoginAspect {
     public void validateLoginCredentials(JoinPoint joinPoint) {
         // Extract headers from the HTTP request
         String userName = request.getHeader("userName"), password = request.getHeader("password");
-        System.out.println(userName + " " + password);
+        logger.info("userName: {} password: {}",userName, password);
 
         if(isNullOrEmpty(userName, password)) {
             throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Invalid credentials");
@@ -52,8 +52,7 @@ public class SecureLoginAspect {
             throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Invalid credentials");
         }
 
-        System.out.println("✅ Credentials validated for method: " +
-                ((MethodSignature) joinPoint.getSignature()).getMethod().getName());
+        logger.info("Credentials validated for method: {} ", ((MethodSignature) joinPoint.getSignature()).getMethod().getName());
     }
 
 
